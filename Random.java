@@ -6,6 +6,7 @@ public class Random{
         File file = new File("./prueba.txt");
         //comprueba si existe
         boolean fileExists = file.exists();
+        //if (file=(*.))
         try {
             RandomAccessFile raf = new RandomAccessFile(file, "rw");
             raf.write(69);
@@ -16,6 +17,7 @@ public class Random{
             raf.seek(15);
             byte[] bytes = "Hello World".getBytes("UTF-8");
             raf.write(bytes);
+            raf.read();
             raf.close();
         } catch (Exception e) {
             e.printStackTrace();

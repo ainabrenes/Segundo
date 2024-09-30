@@ -6,7 +6,6 @@ public class Prueba {
 
     public static void main(String[] args) {
         File file = new File("./prueba.txt");
-        // if () {
 
         try {
             RandomAccessFile raf = new RandomAccessFile(file, "w");

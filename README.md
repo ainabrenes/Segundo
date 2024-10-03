@@ -2,6 +2,8 @@
 Dins la carpeta del projecte heu d’afegir un fitxer de texte README. Aquest fitxer ha de contenir la següent informació:
 Descripció de la funcionalitat desenvolupada
 Informació sobre l’ecosistema de desenvolupament: Sistema operatiu, IDE, versió de Java utilitzada, versions de llibreries…
+v22.1.2 Version Java
+
 Quadern de càrrega: Llistat d’instruccions per a l’execució adequada del contingut del programa. 
 
 En aquest projecte estan desenvolupats uns simples exemples de com funcionen els seguents tipus de java.io:

@@ -1,17 +1,13 @@
 # Segundo
-Dins la carpeta del projecte heu d’afegir un fitxer de texte README. Aquest fitxer ha de contenir la següent informació:
-Descripció de la funcionalitat desenvolupada
-Informació sobre l’ecosistema de desenvolupament: Sistema operatiu, IDE, versió de Java utilitzada, versions de llibreries…
-v22.1.2 Version Java
 
-Quadern de càrrega: Llistat d’instruccions per a l’execució adequada del contingut del programa. 
+Descripción de la funcionalidad desarrollada:
+Este proyecto permite crear y gestionar archivos de texto, leyendo y escribiendo información en ellos. También incluye funcionalidades como copiar el contenido de un archivo a otro y modificar los permisos del archivo copiado para que no se pueda volver a escribir o leer. Pasos:
+-Se crea un nuevo archivo y se le añaden datos.
+-El archivo se lee y su contenido se copia a otro archivo.
+-Se modifican los permisos del archivo copiado para eliminar los permisos de escritura.
+-Se intenta escribir en el archivo copiado, y se genera un error si los permisos se eliminan correctamente.
 
-En aquest projecte estan desenvolupats uns simples exemples de com funcionen els seguents tipus de java.io:
-
--RandomAccessFile
--FileInputStream
--FileReader
--FileOutputStream
--FileWriter
-
-per executarlos, primerament en la terminal carregaba el fixer .class possant javac NomDelFixer.java i despres directament el java NomDelFixer
+Información sobre el ecosistema de desarrollo:
+Sistema operativo: Windows 10 
+IDE: Visual Studio Code
+Versión de Java utilizada: Java 22.1.2 

@@ -1,10 +1,12 @@
 package ActvidadLibros;
 
 import java.io.*;
-import javax.xml.parsers.*;
-import org.w3c.dom.*;
-import java.util.List;
-import java.util.ArrayList;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 public class LlibresParser {
 
@@ -18,36 +20,24 @@ public class LlibresParser {
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("llibre");
             System.out.println("Numero de libros" + nList.getLength());
-            List<Llibre> llibres = new ArrayList<>();
+            //List<Llibre> llibres = new ArrayList<>();
             for (int temp = 0; temp < nList.getLength(); temp++) {
                 Node nNode = nList.item(temp);
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) nNode;
 
-                    System.out.println("\nLibro id: " + element.getAttribute("id"));
-                    System.out.println("Marca: "
-                            + element.getElementsByTagName("marca").item(0).getTextContent());
-                    System.out.println("Modelo: "
-                            + element.getElementsByTagName("modelo").item(0).getTextContent());
-                    System.out.println("Cilindrada: "
-                            + element.getElementsByTagName("cilindrada").item(0).getTextContent());
-                // }
-                        String autor = element.getElementsByTagName("autor").item(0).getTextContent();
-                        String titol = element.getElementsByTagName("titol").item(0).getTextContent();
-                        int any = Integer.parseInt(element.getElementsByTagName("any").item(0).getTextContent());
-                        String resum = element.getElementsByTagName("resum").item(0).getTextContent();
-                        llibres.add(new Llibre(autor, titol, any, resum));
-                    
-                    
+                    System.out.println("Titol: "
+                            + element.getElementsByTagName("titol").item(0).getTextContent());
+                    System.out.println("Autor: "
+                            + element.getElementsByTagName("autor").item(0).getTextContent());
+                    System.out.println("Any: "
+                            + element.getElementsByTagName("any").item(0).getTextContent());
+                    System.out.println("Resum: "
+                            + element.getElementsByTagName("resum").item(0).getTextContent());
+                    System.out.println("");
+
                 }
-                for (Llibre llibre : llibres) {
-                    System.out.println(llibre);
-                }
-                /*factory.setIgnoringComments(true);
-            factory.setIgnoringElementContentWhitespace(true);
-            DocumentBuilder dBuilder = factory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-                 */
+
             }
 
         } catch (Exception e) {

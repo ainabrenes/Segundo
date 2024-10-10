@@ -8,7 +8,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class LlibresParser {
+public class Llibres {
 
     public static void main(String[] args) {
         try {
@@ -16,11 +16,9 @@ public class LlibresParser {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = factory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
-
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("llibre");
             System.out.println("Numero de libros" + nList.getLength());
-            //List<Llibre> llibres = new ArrayList<>();
             for (int temp = 0; temp < nList.getLength(); temp++) {
                 Node nNode = nList.item(temp);
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -35,11 +33,8 @@ public class LlibresParser {
                     System.out.println("Resum: "
                             + element.getElementsByTagName("resum").item(0).getTextContent());
                     System.out.println("");
-
                 }
-
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,0 +1,8 @@
+-- Insertar autors
+INSERT INTO autors (id, nom) VALUES (1, 'Gabriel García Márquez');
+INSERT INTO autors (id, nom) VALUES (2, 'Isabel Allende');
+
+-- Insertar llibres
+INSERT INTO llibres (id, titol, autor_id) VALUES (1, 'Cent anys de solitud', 1);  -- Escrit per García Márquez
+INSERT INTO llibres (id, titol, autor_id) VALUES (2, 'La casa dels esperits', 2);  -- Escrit per Isabel Allende
+INSERT INTO llibres (id, titol, autor_id) VALUES (3, 'L’amor en els temps del còlera', 1);  -- Escrit per García Márquez

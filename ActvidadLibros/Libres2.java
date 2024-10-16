@@ -25,7 +25,6 @@ public class Libres2 {
                 private StringBuilder contingut = new StringBuilder();
                 private boolean llegintContingut = false;
 
-                @Override
                 public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
                     if (qName.equalsIgnoreCase("llibre")) {
                         llibreActual = new String[4]; // Reiniciar per a un nou llibre
@@ -38,7 +37,6 @@ public class Libres2 {
                     }
                 }
 
-                @Override
                 public void endElement(String uri, String localName, String qName) throws SAXException {
                     if (llegintContingut) {
                         switch (qName.toLowerCase()) {
@@ -61,7 +59,6 @@ public class Libres2 {
                     }
                 }
 
-                @Override
                 public void characters(char[] ch, int start, int length) throws SAXException {
                     if (llegintContingut) {
                         contingut.append(ch, start, length); // Afegir contingut llegit
@@ -74,6 +71,7 @@ public class Libres2 {
             // Imprimir els llibres
             for (String[] llibre : llibres) {
                 System.out.printf("Autor: %s, Títol: %s, Any: %s, Resum: %s%n", llibre[0], llibre[1], llibre[2], llibre[3]);
+            System.out.println("------------------------------------------------------------------------------------------");
             }
 
         } catch (Exception e) {

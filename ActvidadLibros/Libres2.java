@@ -72,7 +72,7 @@ public class Libres2 {
 
             parser.parse(inputFile, handler);
 
-            // Imprimir els llibres
+            // enseñar los libros
             for (String[] llibre : llibres) {
                 System.out.printf("Autor: %s, Títol: %s, Any: %s, Resum: %s%n", llibre[0], llibre[1], llibre[2], llibre[3]);
                 System.out.println("------------------------------------------------------------------------------------------");
@@ -83,4 +83,3 @@ public class Libres2 {
         }
     }
 }
-//  hay manera de hacer este codigo mas sencillo y expicarme paso a paso

@@ -15,6 +15,7 @@ public class SPU01E02_nom_llinatge {
         try {
             process = processBuilder.start();
 
+            
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             OutputStream outputStream = process.getOutputStream();
             BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));

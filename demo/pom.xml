@@ -12,5 +12,9 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
-
+<dependency>
+    <groupId>org.xerial.sqlite-jdbc</groupId>
+    <artifactId>sqlite-jdbc</artifactId>
+    <version>3.36.0.3</version>
+</dependency>
 </project>

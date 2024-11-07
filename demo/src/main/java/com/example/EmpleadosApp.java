@@ -1,5 +1,4 @@
 package com.example;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,7 +15,6 @@ public class EmpleadosApp {
         createDatabaseAndTable();
         Scanner escaner = new Scanner(System.in);
         int numero;
-
         do {
             System.out.println("Opciones:");
             System.out.println("1-Introducir datos");
@@ -59,23 +57,24 @@ public class EmpleadosApp {
         }
     }
 
-    private static void introducirDatos(Scanner scanner) {
-        try (Connection conexion = DriverManager.getConnection(URL)) {
+    private static void introducirDatos(Scanner escaner) {
+        try (Connection conexion = DriverManager.getConnection(URL);
+            Statement state = conexion.createStatement()) {
             String sql = "INSERT INTO library2 (id, nom, edat, correu) VALUES (?, ?, ?, ?)";
             PreparedStatement preparedStatement = conexion.prepareStatement(sql);
             String continuar;
 
             do {
                 System.out.print("ID empleado: ");
-                int id = scanner.nextInt();
-                scanner.nextLine();
+                int id = escaner.nextInt();
+                escaner.nextLine();
                 System.out.print("Nombre empleado: ");
-                String nom = scanner.nextLine();
+                String nom = escaner.nextLine();
                 System.out.print("Edad empleado: ");
-                int edat = scanner.nextInt();
-                scanner.nextLine();
+                int edat = escaner.nextInt();
+                escaner.nextLine();
                 System.out.print("Correo empleado: ");
-                String correu = scanner.nextLine();
+                String correu = escaner.nextLine();
 
                 preparedStatement.setInt(1, id);
                 preparedStatement.setString(2, nom);
@@ -84,7 +83,7 @@ public class EmpleadosApp {
                 preparedStatement.executeUpdate();
 
                 System.out.print("Quieres añadir otro empleado? Si o No: ");
-                continuar = scanner.nextLine();
+                continuar = escaner.nextLine();
             } while (continuar.equalsIgnoreCase("Si"));
 
         } catch (SQLException e) {
@@ -93,9 +92,9 @@ public class EmpleadosApp {
     }
 
     private static void leerDatos() {
-        try (Connection conn = DriverManager.getConnection(URL)) {
+        try (Connection conexion = DriverManager.getConnection(URL)) {
             String sql = "SELECT * FROM llibre";
-            Statement stmt = conn.createStatement();
+            Statement stmt = conexion.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {

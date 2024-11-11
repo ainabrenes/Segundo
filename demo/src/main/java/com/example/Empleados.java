@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class EmpleadosApp {
+public class Empleados {
 
-    private static final String URL = "C:\\Users\\alumne-DAM\\Documents\\RepoSegundo\\Segundo\\demo\\src\\main\\java\\com\\example\\library2.db";
+    private static final String URL = "jdbc:sqlite:\\C:\\Users\\alumne-DAM\\Documents\\RepoSegundo\\Segundo\\demo\\src\\main\\java\\com\\example\\empresa.db";
 
     public static void main(String[] args) {
         createDatabaseAndTable();
@@ -31,10 +31,10 @@ public class EmpleadosApp {
                     leerDatos();
                     break;
                 case 3:
-                    System.out.println("Cerrando...");
+                    System.out.println("Se va a cerrar el programa.");
                     break;
                 default:
-                    System.out.println("No valida, prueba de nuevo");
+                    System.out.println("Invalida, prueba de nuevo");
             }
         } while (numero != 3);
 
@@ -45,7 +45,7 @@ public class EmpleadosApp {
         try (Connection conexion = DriverManager.getConnection(URL)) {
             if (conexion != null) {
                 Statement statement = conexion.createStatement();
-                String sql = "CREATE TABLE IF NOT EXISTS library2 ("
+                String sql = "CREATE TABLE IF NOT EXISTS empleados ("
                         + "id INTEGER PRIMARY KEY,"
                         + "nom TEXT,"
                         + "edat INTEGER,"
@@ -60,7 +60,7 @@ public class EmpleadosApp {
     private static void introducirDatos(Scanner escaner) {
         try (Connection conexion = DriverManager.getConnection(URL);
             Statement state = conexion.createStatement()) {
-            String sql = "INSERT INTO library2 (id, nom, edat, correu) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO empleados (id, nom, edat, correu) VALUES (?, ?, ?, ?)";
             PreparedStatement preparedStatement = conexion.prepareStatement(sql);
             String continuar;
 
@@ -93,7 +93,7 @@ public class EmpleadosApp {
 
     private static void leerDatos() {
         try (Connection conexion = DriverManager.getConnection(URL)) {
-            String sql = "SELECT * FROM llibre";
+            String sql = "SELECT * FROM empleados";
             Statement stmt = conexion.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 

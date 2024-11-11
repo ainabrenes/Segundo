@@ -87,7 +87,7 @@ public class Empleados {
             } while (continuar.equalsIgnoreCase("Si"));
 
         } catch (SQLException e) {
-            System.out.println("Error al insertar datos: " + e.getMessage());
+            System.out.println("Error al insertar los datos: " + e.getMessage());
         }
     }
 

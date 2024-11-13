@@ -12,7 +12,7 @@ public class Empleados {
     private static final String URL = "jdbc:sqlite:\\C:\\Users\\alumne-DAM\\Documents\\RepoSegundo\\Segundo\\demo\\src\\main\\java\\com\\example\\empresa.db";
 
     public static void main(String[] args) {
-        createDatabaseAndTable();
+        CreacionBaseDatos();
         Scanner escaner = new Scanner(System.in);
         int numero;
         do {
@@ -41,7 +41,7 @@ public class Empleados {
         escaner.close();
     }
 
-    private static void createDatabaseAndTable() {
+    private static void CreacionBaseDatos() {
         try (Connection conexion = DriverManager.getConnection(URL)) {
             if (conexion != null) {
                 Statement statement = conexion.createStatement();

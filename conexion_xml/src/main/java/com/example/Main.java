@@ -1,16 +1,19 @@
 package com.example;
 
-import org.json.JSONObject;
-
-import java.io.*;
+import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.json.JSONObject;
+
 public class Main {
+
     public static void main(String[] args) {
         try {
             // Paso 1: Leer el archivo XML
-            String xmlFilePath = "entrada.xml";
+            // String xmlFilePath = "entrada.xml";
+            String xmlFilePath = "C:\\Users\\alumne-DAM\\Documents\\RepoSegundo\\Segundo\\entrada.xml";
+
             String xmlContent = new String(Files.readAllBytes(Paths.get(xmlFilePath)));
 
             // Imprimir el contenido original del archivo XML

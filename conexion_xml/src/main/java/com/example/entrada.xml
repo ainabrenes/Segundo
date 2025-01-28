@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persona>
-    <nombre>Juan</nombre>
-    <edad>30</edad>
+    <nombre>Aina</nombre>
+    <edad>20</edad>
+    <email>ainabrenes@gmail.com</email>
 </persona>
